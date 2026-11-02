@@ -2,10 +2,10 @@
 An overview of a RAG restaurant recommender I built on Together AI’s API. Here is an overview of the project, and [some of] results
 
 
-This was solely a personal, educational project created on October 30th, 2026: I rebuilt a restaurant recommender I first made at a hackathon in Oct 2024, this time on Together AI's API. This page covers the approach, platform measurements, and developer feedback. The code and the full evaluation results are private for now, pending approval from Yelp for a public release. The project uses the Yelp Open Dataset, and no data or review text appears here.
+This was solely a personal, educational project created on October 30th, 2026: My parents were traveling to Santa Barbara CA, so I rebuilt a restaurant recommender I first made at a hackathon in Oct 2024 for them, but this time on Together AI's API. This page covers the approach, platform measurements, and developer feedback. The code and the full evaluation results are private for now, pending approval from Yelp for a public release. The project uses the Yelp Open Dataset, and no data or review text appears here.
 
 ## The problem
-A user asks for restaurants in natural language ("quiet spot for a first date", "cheap ramen open past 9pm") and the system retrieves relevant businesses and answers using only what it retrieved. The hard part is constraints like price and opening hours, which an embedding barely captures, so a naive system recommends places that are closed or too expensive, and sounds confident doing it.
+A user (e.g., My dad) asks for restaurants in natural language ("quiet spot for date night", "cheap ramen open past 9pm") and the system retrieves relevant businesses and answers using only what it retrieved. The hard part is constraints like price and opening hours, which an embedding barely captures, so a naive system recommends places that are closed or too expensive, and sounds confident doing it.
 
 ## How it works
 1. **Data prep:** open restaurants in the Santa Barbara metro (my parents were visiting, and the dataset has no Bay Area coverage). One document per business, built from its categories, price, hours, attributes, and a few reviews.

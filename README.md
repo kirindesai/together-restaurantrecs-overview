@@ -1,5 +1,5 @@
 # together-restaurantrecs-overview
-An overview of a RAG restaurant recommender I built on Together AI’s API. Here is an overview of the project, and [some] results
+An overview of a RAG restaurant recommender I built on Together AI’s API. Here is an overview of the project, and [some of] results
 
 
 This was solely a personal, educational project created on October 30th, 2026: I rebuilt a restaurant recommender I first made at a hackathon in Oct 2024, this time on Together AI's API. This page covers the approach, platform measurements, and developer feedback. The code and the full evaluation results are private for now, pending approval from Yelp for a public release. The project uses the Yelp Open Dataset, and no data or review text appears here.

@@ -1,2 +1,2 @@
 # together-restaurantrecs-overview
-RAG restaurant recommender built on Together AI’s API: overview and results
+An overview of a RAG restaurant recommender I built on Together AI’s API. Here is an overview of the project, and [some] results

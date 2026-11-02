@@ -1,8 +1,8 @@
 # together-restaurantrecs-overview
-An overview of a RAG restaurant recommender I built on Together AI’s API. Here is an overview of the project, and [some of] results
+An overview of a RAG restaurant recommender I built on Together AI’s API! Here is an overview of the project, and [some of] my results.
 
 
-This was solely a personal, educational project created on October 30th, 2026: My parents were traveling to Santa Barbara CA for Halloween weekend, so I rebuilt a restaurant recommender I first made at a hackathon in Oct 2024 for them to use on their trip, but this time on Together AI's API. This page covers the approach, platform measurements, and developer feedback. The code and the full evaluation results are private for now, pending approval from Yelp for a public release. The project uses the Yelp Open Dataset, and no data or review text appears here.
+My parents were traveling to Santa Barbara CA for Halloween weekend, so I rebuilt a restaurant recommender I first made at a hackathon in Oct 2024 for them to use on their trip, but this time on Together AI's API. This was solely a personal, educational project created on October 30th, 2026. This page covers the approach, platform measurements, and developer feedback. The code and the full evaluation results are private for now, pending approval from Yelp for a public release. The project uses the Yelp Open Dataset, and I made sure no data or review text appears here!
 
 ## The problem
 A user (e.g., My dad) asks for restaurants in natural language ("quiet spot for date night", "cheap ramen open past 9pm") and the system retrieves relevant businesses and answers using only what it retrieved. The hard part is constraints like price and opening hours, which an embedding barely captures, so a naive system recommends places that are closed or too expensive, and sounds confident doing it.

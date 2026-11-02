@@ -24,7 +24,7 @@ Retrieval accuracy and answer-quality results will be published with the code on
 | `Qwen/Qwen3.5-9B` | 1.58s | 3.72s | 1,849 | 114 | $0.000343 |
 | `openai/gpt-oss-120b` | 2.30s | 4.00s | 1,734 | 145 | $0.000347 |
 
-Prices from Together's serverless docs on Oct 30, 2026. Temperature 0.2.
+Prices from Together's serverless docs on Oct 30, 2026.
 
 ## What I found
 1. **In RAG, input price matters more than model size.** Prompts were 12 to 16 times longer than answers, so input tokens drove cost. gpt-oss-120b's lower input price offset its higher output price, and a 120B model cost the same per query as a 9B one. The real trade-off was latency: Qwen was about 0.7s faster at the median.
@@ -34,7 +34,7 @@ Prices from Together's serverless docs on Oct 30, 2026. Temperature 0.2.
 ## Developer friction log (Together AI)
 Notes from building on the platform, written as feedback a customer team might send:
 - **The serverless catalog API omitted the models I used.** `client.models.list_supported(product="PRODUCT_SERVERLESS")` returned 13 chat models and left out both `Qwen/Qwen3.5-9B` and `openai/gpt-oss-120b`, though both answered calls fine. About 8 models on the docs' serverless page were missing from the API list. I got unstuck by trusting a live test call over the catalog. A customer building a model picker from this API would hide models that work.
-- **No serverless embedding models.** The model older Together RAG tutorials use returned a 400: "Unable to access non-serverless model BAAI/bge-base-en-v1.5. Please visit ... to create and start a new dedicated endpoint." The error is clear, but I only learned it at call time. I embedded locally and kept all generation on Together. Suggestion: flag serverless vs. dedicated status at the top of the embeddings and RAG docs.
+- **No serverless embedding models.** The model older Together RAG tutorials use returned a 400: "Unable to access non-serverless model BAAI/bge-base-en-v1.5. Please visit ... to create and start a new dedicated endpoint." The error is clear, but I only learned it at call time. I embedded locally and kept all generation on Together. My suggestion: flag serverless vs. dedicated status at the top of the embeddings and RAG docs.
 - **One bad API key, two error formats.** The catalog endpoint returned a Google-style error (`'code': 16` with a `ProblemDetail` block), while chat returned an OpenAI-style one (`invalid_api_key`). I handled it by checking HTTP status codes instead of parsing error bodies. One schema across endpoints would mean one error handler.
 - **Docs lag the SDK.** Installed `together` 3.0.0 differs from the docs' v2 examples: `client.models.list()` now returns your own project's models, and the public catalog moved to `list_supported()`.
 
